@@ -66,7 +66,24 @@ net.ipv4.ip_forward=1
 #  based on Router Advertisements for this host
 net.ipv6.conf.all.forwarding=1
 
-# of course you change all the interface names to your names. 
+# further network related changes:
+
+# of course you change all the interface names  and IPs to your names. 
+
+# set up of the network interfaces.The important one is the wlx... device.  That is the wifi
+# you need to give it an IP - I gave it 192.168.5.1  and I manually set up and IP on the
+# addresses on the connecting device - say 192.168.5.2.  I guess you could use DHCP but that
+# makes it too easy. I have a DNS server I added myself - add yours or your ISPs   Ignore the 
+# 159 address except use your eth0 or whatever interface - the 100 below is your gateway
+# probably 3 lines below could be eliminated (flush up down)
+
+/sbin/ifconfig wlx1cbfce847aaf down
+/sbin/ifconfig enp4s0 inet 159.134.205.122 netmask 255.255.255.0 
+/sbin/ifconfig wlx1cbfce847aaf inet 192.168.5.1 netmask 255.255.255.0
+/sbin/ip route flush 159.134.205.122
+/sbin/ip route add 159.134.205.0/24 dev enp4s0 
+/sbin/route add default gw 159.134.205.100
+/sbin/ifconfig wlx1cbfce847aaf up
 
 
 
