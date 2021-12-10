@@ -1,5 +1,5 @@
-The script below and two conf filesare needed - this is 7 hours of work!  Maybe you can eliminate something
-from hostapd.conf or change it 
+The script below and two conf files are needed - this is 7 hours of work!  Maybe you can eliminate something
+from hostapd.conf or change it.  Changing it to work with IPV6 would be another bit of work.  You can change the hw_mode or the channel to suit your hardware. Country code too. 
 
 # hostapd-setup-on-ubuntu
 a script and changes needed to run hostapd on ubuntu
