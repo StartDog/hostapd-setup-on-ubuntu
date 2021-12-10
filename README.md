@@ -57,6 +57,8 @@ echo "start hostapd"
 #---------------------------------------------------#
 one further change is required - changes required in /etc/sysctl.conf  - plus a reboot
 
+# /etc/sysctl.conf changes - require a reboot
+
 # Uncomment the next line to enable packet forwarding for IPv4
 net.ipv4.ip_forward=1
 # Uncomment the next line to enable packet forwarding for IPv6
