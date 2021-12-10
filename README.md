@@ -72,11 +72,10 @@ one further change is required - changes required in /etc/sysctl.conf  - plus a 
 
 # /etc/sysctl.conf changes - require a reboot
 
-# Uncomment the next line to enable packet forwarding for IPv4
+# Uncomment the line to enable packet forwarding for IPv4 maybe for IPV6 if wanted
+
 net.ipv4.ip_forward=1
-# Uncomment the next line to enable packet forwarding for IPv6
-#  Enabling this option disables Stateless Address Autoconfiguration
-#  based on Router Advertisements for this host
+
 net.ipv6.conf.all.forwarding=1
 
 # further network related changes:
