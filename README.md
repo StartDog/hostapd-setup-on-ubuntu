@@ -78,12 +78,19 @@ net.ipv6.conf.all.forwarding=1
 # probably 3 lines below could be eliminated (flush up down)
 
 /sbin/ifconfig wlx1cbfce847aaf down
+
 /sbin/ifconfig enp4s0 inet 159.134.205.122 netmask 255.255.255.0 
+
 /sbin/ifconfig wlx1cbfce847aaf inet 192.168.5.1 netmask 255.255.255.0
+
 /sbin/ip route flush 159.134.205.122
+
 /sbin/ip route add 159.134.205.0/24 dev enp4s0 
+
 /sbin/route add default gw 159.134.205.100
+
 /sbin/ifconfig wlx1cbfce847aaf up
+
 
 
 
