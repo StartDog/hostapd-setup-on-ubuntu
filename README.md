@@ -10,21 +10,31 @@ below is the /etc/hostapd/hostapd.conf file"
 
 # hostapd.conf
 ssid=test-wifi-name
+
 hw_mode=g
+
 channel=6
+
 beacon_int=500
+
 country_code=US
 
 wpa=2
+
 wpa_passphrase=mypasswordwhaeverthatis
+
 wpa_key_mgmt=WPA-PSK
+
 wpa_group_rekey=86400
+
 #wpa_pairwise=TKIP
 
 #skip_inactivity_poll=1
 
 own_ip_addr=192.168.5.1
+
 #wpa_strict_rekey=1
+
 #disassoc_low_ack=0
 
 internet=1
@@ -42,12 +52,15 @@ echo "start up wifi ap"
 echo "set ap power to auto"
 
 /sbin/iwconfig wlx1cbfce847aaf txpower auto
+
 #/sbin/iwconfig wlx1cbfce847aaf txpower 100mW
 
 echo "make sure iptables are changed"
 
 /sbin/iptables -t nat -A POSTROUTING -o enp4s0 -j MASQUERADE
+
 /sbin/iptables -A FORWARD -i wlx1cbfce847aaf -o enp4s0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+
 /sbin/iptables -A FORWARD -i wlx1cbfce847aaf -o enp4s0 -j ACCEPT
 
 echo "start hostapd"
