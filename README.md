@@ -27,15 +27,9 @@ wpa_key_mgmt=WPA-PSK
 
 wpa_group_rekey=86400
 
-#wpa_pairwise=TKIP
-
-#skip_inactivity_poll=1
+rsn_pairwise=CCMP
 
 own_ip_addr=192.168.5.1
-
-#wpa_strict_rekey=1
-
-#disassoc_low_ack=0
 
 internet=1
 
@@ -53,7 +47,7 @@ echo "set ap power to auto"
 
 /sbin/iwconfig wlx1cbfce847aaf txpower auto
 
-#/sbin/iwconfig wlx1cbfce847aaf txpower 100mW
+/sbin/iwconfig wlx1cbfce847aaf txpower 250mw
 
 echo "make sure iptables are changed"
 
